@@ -12,11 +12,13 @@ public class Account {
     //create getter and setter
 
 
-    public int getAccountBalance() {
+    public int getAccountBalance()
+    {
         return accountBalance;
     }
 
-    public void setAccountBalance(int accountBalance) {
+    public void setAccountBalance(int accountBalance)
+    {
         this.accountBalance = accountBalance;
     }
 
@@ -29,9 +31,21 @@ public class Account {
      * @throws InsufficientFundException
      *
      */
-    public int  withdraw(int  amount) throws InsufficientFundException{
-
-        return 1;
+    public int  withdraw(int  amount) throws InsufficientFundException
+    {
+        try
+        {
+            accountBalance=accountBalance-amount;
+            {
+                System.out.println("Withdraw ammount = " +amount);
+                System.out.println("Account balance = " +accountBalance);
+            }
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+        return getAccountBalance();
     }
 
 
